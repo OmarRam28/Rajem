@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAJEM | Construcción, Instalación y Mantenimiento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        .header {
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #e74c3c;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100svh;
+            height: auto;
+            padding: 100px 5vw 40px 5vw;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(rgba(25, 118, 210, 0.2), rgba(0,0,0,0.4)), url('images/hero-background.png');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: #fff;
+            filter: saturate(1.1) brightness(1.05);
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: #e74c3c;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .about h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .about-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .about-text {
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .about-features {
+            list-style: none;
+            margin-top: 2rem;
+        }
+
+        .about-features li {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-features i {
+            color: #e74c3c;
+            margin-right: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 0;
+        }
+
+        .services h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #2c3e50;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: all 0.3s ease;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card i {
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .project-showcase {
+            margin-top: 2rem;
+        }
+
+        .project-main {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .project-main h3 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 1.8rem;
+        }
+
+        .project-info {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .project-info ul {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .project-info ul li {
+            position: relative;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-info ul li:before {
+            content: "•";
+            color: #e74c3c;
+            font-weight: bold;
+            position: absolute;
+            left: -1.5rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            aspect-ratio: 4/3;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 1.5rem;
+            color: #fff;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            transform: translateY(0);
+        }
+
+        .project-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .project-overlay h4 {
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .project-overlay p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+        }
+
+        .contact h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .info-item i {
+            font-size: 1.5rem;
+            color: #e74c3c;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .submit-button {
+            padding: 1rem;
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #e74c3c;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .nav-links {
+                margin-top: 1rem;
+            }
+
+            .nav-links li {
+                margin: 0 1rem;
+            }
+
+            .hero {
+                min-height: 60vh;
+                height: auto;
+                padding: 100px 5vw 40px 5vw;
+            }
+
+            .hero-content {
+                padding: 0 2vw;
+                word-break: break-word;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                line-height: 1.15;
+                word-break: break-word;
+                white-space: normal;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+                line-height: 1.3;
+                word-break: break-word;
+                white-space: normal;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-main {
+                padding: 1.5rem;
+            }
+
+            .project-main h3 {
+                font-size: 1.5rem;
+            }
+
+            .logo img {
+                height: 50px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in, .slide-in-left, .slide-in-right, .scale-in, .bounce-in, .slide-up {
+            opacity: 0;
+            transform: none;
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+        .fade-in.visible, .slide-in-left.visible, .slide-in-right.visible, .scale-in.visible, .bounce-in.visible, .slide-up.visible {
+            opacity: 1;
+            transform: none;
+        }
+        .service-card, .project-card, .value-item {
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+        .service-card.visible, .project-card.visible, .value-item.visible {
+            opacity: 1;
+            transform: none;
+        }
+        /* Mejora de carga de imágenes */
+        .project-card img, .client-logo img {
+            filter: blur(8px);
+            transition: filter 0.3s;
+        }
+        .project-card img.loaded, .client-logo img.loaded {
+            filter: blur(0);
+        }
+
+        /* Centrado de valores y servicios */
+        .values-grid, .services-grid {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .value-item, .service-card {
+            margin: 0 auto;
+        }
+
+        /* Enhanced Animation Classes */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        .rotate {
+            animation: rotate 10s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .bounce-in {
+            opacity: 0;
+            transform: scale(0.3);
+            animation: bounceIn 0.8s forwards;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            70% { transform: scale(0.9); opacity: 0.9; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .slide-up {
+            opacity: 0;
+            transform: translateY(50px);
+            animation: slideUp 0.8s forwards;
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Enhanced Section Styles */
+        .service-card {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(231, 76, 60, 0.1), rgba(44, 62, 80, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            opacity: 1;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .project-card {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(44, 62, 80, 0.8);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+
+        /* Enhanced Button Styles */
+        .cta-button, .submit-button {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button::after, .submit-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.1);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover::after, .submit-button:hover::after {
+            transform: translateX(0);
+        }
+
+        /* Enhanced Navbar */
+        .nav-links a {
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #e74c3c;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Values Section Styles */
+        .values-section {
+            margin: 2rem 0;
+            padding: 1.5rem 0;
+        }
+
+        .values-section h3 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-item i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #e74c3c;
+            margin-bottom: 0.8rem;
+        }
+
+        .value-item h4 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .value-item p {
+            color: #666;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .value-item.faith-centered {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+            .value-item {
+                max-width: 100%;
+            }
+        }
+
+        /* Clients Section Styles */
+        .clients {
+            padding: 5rem 0;
+            background-color: #f9f9f9;
+        }
+
+        .clients h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+            justify-items: center;
+        }
+
+        .client-logo {
+            width: 220px;
+            height: 120px;
+            padding: 1.5rem;
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .client-logo img {
+            max-width: 100%;
+            height: auto;
+            object-fit: contain;
+            transition: all 0.3s ease;
+        }
+
+        /* Specific style for SEMEX logo */
+        .client-logo img[src*="Semex"] {
+            max-width: 80%;
+            padding: 0.5rem;
+        }
+
+        .client-logo:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .client-logo:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .client-logo {
+                width: 180px;
+                height: 100px;
+                padding: 1rem;
+            }
+        }
+
+        .project-card img {
+            display: block;
+            margin: 0 auto;
+        }
+        .project-overlay h4, .project-overlay p {
+            text-align: center;
+        }
+
+        /* Menú hamburguesa */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            z-index: 1100;
+        }
+        .hamburger span {
+            height: 4px;
+            width: 100%;
+            background: #2c3e50;
+            margin: 5px 0;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 900px) {
+            .nav-links {
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100vw;
+                background: #fff;
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                gap: 0;
+                padding: 0;
+                margin: 0;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+                display: none;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .navbar {
+                flex-direction: row;
+                padding: 0.5rem 1rem;
+            }
+            .logo img {
+                height: 40px;
+            }
+        }
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .service-card {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logos/rajem-logo.png" alt="RAJEM Logo">
+            </div>
+            <div class="hamburger" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="main-nav">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#clientes">Nuestros Clientes</a></li>
+                <li><a href="#proyectos">Proyectos</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>RAJEM</h1>
+            <p>Construcción, Instalación y Mantenimiento
+                 de Excelencia</p>
+            <a href="#contacto" class="cta-button">Contáctanos</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="nosotros" class="about">
+        <div class="container">
+            <h2>Sobre Nosotros</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p> En RAJEM construccion instalaciones y mantenimiento garantizamos la 
+                        satisfacción del cliente en tiempo y forma.
+                        Adecuando a los lineamientos y normas establecidas por los clientes y códigos
+                        de construcción vigentes.
+                        Mejorar el sistema y tecnología en los procesos de construcción.
+                        Empresa socialmente responsable con el medio ambiente.</p>
+                    <div class="values-section">
+                        <h3>Nuestros Valores</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <i class="fas fa-heart"></i>
+                                <h4>Pasión</h4>
+                                <p>Amamos lo que hacemos y lo demostramos en cada proyecto</p>
+                            </div>
+                            <div class="value-item">
+                                <i class="fas fa-handshake"></i>
+                                <h4>Compromiso</h4>
+                                <p>Cumplimos con nuestra palabra y entregamos excelencia</p>
+                            </div>
+                            <div class="value-item faith-centered">
+                                <i class="fas fa-cross"></i>
+                                <h4>Fé</h4>
+                                <p>Confiamos en Dios y creemos en nuestro trabajo</p>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="about-features">
+                        <li><i class="fas fa-check"></i> Experiencia comprobada</li>
+                        <li><i class="fas fa-check"></i> Calidad garantizada</li>
+                        <li><i class="fas fa-check"></i> Proyectos a tiempo</li>
+                        <li><i class="fas fa-check"></i> Atención personalizada</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios" class="services">
+        <div class="container">
+            <h2>Nuestros Servicios</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-building"></i>
+                    <h3>Obra Civil</h3>
+                    <p>Construcción de infraestructura y edificaciones con los más altos estándares de calidad.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-layer-group"></i>
+                    <h3>Cimentaciones</h3>
+                    <p>Base sólida para cualquier tipo de construcción, garantizando estabilidad y durabilidad.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-home"></i>
+                    <h3>Remodelaciones</h3>
+                    <p>Transformación de espacios existentes con diseños modernos y funcionales.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-expand"></i>
+                    <h3>Adecuaciones y Ampliaciones</h3>
+                    <p>Adaptación y expansión de espacios según las necesidades del cliente.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instalación Eléctrica</h3>
+                    <p>Baja, media y alta tensión con certificación y cumplimiento de normas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cubes"></i>
+                    <h3>Estructura Metálica</h3>
+                    <p>IPR, HHR, ligapolines, rompevientos y estructuras especializadas.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-calculator"></i>
+                    <h3>Ingenierías</h3>
+                    <p>Servicios de ingeniería especializada para proyectos complejos.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-th"></i>
+                    <h3>Tablaroca y Lámina</h3>
+                    <p>Colocación de tablaroca, lámina y multicanal con acabados profesionales.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>Instalaciones Hidráulicas</h3>
+                    <p>Hidráulicas, sanitarias y pluviales con garantía de funcionamiento.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-truck-pickup"></i>
+                    <h3>Movimiento de Tierras</h3>
+                    <p>Preparación de terreno, colocación de carpeta, base o subbase.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-road"></i>
+                    <h3>Mantenimiento de Carpeta</h3>
+                    <p>Reparación de baches y mantenimiento de carpeta de rodamiento.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-city"></i>
+                    <h3>Urbanización</h3>
+                    <p>Desarrollo y mejora de espacios urbanos con planificación integral.</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-fire-extinguisher"></i>
+                    <h3>Sistemas Contra Incendio</h3>
+                    <p>Mantenimiento y actualización de sistemas de protección contra incendios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos" class="projects">
+        <div class="container">
+            <h2>Proyectos Destacados</h2>
+            <div class="project-showcase">
+                <div class="project-main">
+                    <h3>Cimentación para Maquina Estirado de Cable y Trincheras</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Febrero 2022</p>
+                        <p><strong>Cliente:</strong> Planta Viakon</p>
+                        <p><strong>Ubicación:</strong> San Nicolás de los Garza</p>
+                        <p><strong>Trabajos Realizados:</strong></p>
+                        <ul>
+                            <li>Colocación de acero</li>
+                            <li>Colocado de cimbra</li>
+                            <li>Colados de concreto</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/viakon1.jpg" alt="Preparación de área para cimentación">
+                        <div class="project-overlay">
+                            <h4>Preparación Inicial</h4>
+                            <p>Acondicionamiento del área de trabajo</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon2.jpg" alt="Colocación de acero de refuerzo">
+                        <div class="project-overlay">
+                            <h4>Armado de Acero</h4>
+                            <p>Instalación de varillas y malla de refuerzo</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon3.jpg" alt="Proceso de cimbrado">
+                        <div class="project-overlay">
+                            <h4>Cimbrado</h4>
+                            <p>Preparación para colado de concreto</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Nuevo Proyecto: Novocast -->
+                <div class="project-main">
+                    <h3>Bodega de mantenimiento - Novocast</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Febrero 2022</p>
+                        <p><strong>Cliente:</strong> Novocast</p>
+                        <p><strong>Ubicación:</strong> El Carmen, NL</p>
+                        <p><strong>Trabajo:</strong> Instalación de estructura y lámina, cimentación y firme de concreto.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/novocast1.jpg" alt="Losa de concreto Novocast">
+                        <div class="project-overlay">
+                            <h4>Losa de concreto</h4>
+                            <p>Colado y afinado de firme de concreto para bodega de mantenimiento.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/novocast2.jpg" alt="Estructura metálica Novocast">
+                        <div class="project-overlay">
+                            <h4>Estructura Metálica</h4>
+                            <p>Montaje de estructura metálica para soporte de lámina.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/novocast3.jpg" alt="Cerramiento con lámina Novocast">
+                        <div class="project-overlay">
+                            <h4>Cerramiento con lámina</h4>
+                            <p>Instalación de lámina en muros y techumbre.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Ampliación de oficinas de laboratorio -->
+                <div class="project-main">
+                    <h3>Ampliación de oficinas de laboratorio</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Febrero 2022</p>
+                        <p><strong>Cliente:</strong> Laboratorio (confidencial)</p>
+                        <p><strong>Ubicación:</strong> Monterrey, NL</p>
+                        <p><strong>Trabajo:</strong> Colocación de tablaroca y durock.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/lab1.jpg" alt="Pasillo con tablaroca">
+                        <div class="project-overlay">
+                            <h4>Pasillo principal</h4>
+                            <p>Colocación de tablaroca en muros y plafón.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/lab2.jpg" alt="Plafón de tablaroca">
+                        <div class="project-overlay">
+                            <h4>Plafón</h4>
+                            <p>Detalles de plafón y acabados en durock.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/lab3.jpg" alt="Oficina terminada">
+                        <div class="project-overlay">
+                            <h4>Oficina terminada</h4>
+                            <p>Vista general del área ampliada y acabados finales.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Fosa para cuarto de solución - Planta Viakon -->
+                <div class="project-main">
+                    <h3>Fosa para cuarto de solución - Planta Viakon</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Mayo 2022</p>
+                        <p><strong>Cliente:</strong> Planta Viakon</p>
+                        <p><strong>Ubicación:</strong> San Nicolás de los Garza</p>
+                        <p><strong>Trabajo:</strong> Muro de contención, paredes de block No. 8.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/fosa1.jpg" alt="Excavación fosa Viakon">
+                        <div class="project-overlay">
+                            <h4>Excavación</h4>
+                            <p>Inicio de excavación para la fosa del cuarto de solución.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/fosa2.jpg" alt="Avance excavación fosa Viakon">
+                        <div class="project-overlay">
+                            <h4>Avance de excavación</h4>
+                            <p>Excavación y preparación del terreno.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/fosa3.jpg" alt="Colocación de acero fosa Viakon">
+                        <div class="project-overlay">
+                            <h4>Colocación de acero</h4>
+                            <p>Armado de acero para muros y losa de la fosa.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/fosa4.jpg" alt="Colado de concreto fosa Viakon">
+                        <div class="project-overlay">
+                            <h4>Colado de concreto</h4>
+                            <p>Colado de concreto en la base de la fosa.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Cimentación para máquina estiradora de cable - Planta Viakon -->
+                <div class="project-main">
+                    <h3>Cimentación para máquina estiradora de cable - Planta Viakon</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Septiembre 2022</p>
+                        <p><strong>Cliente:</strong> Planta Viakon</p>
+                        <p><strong>Ubicación:</strong> San Nicolás de los Garza</p>
+                        <p><strong>Trabajo:</strong> Trinchera para cableado de máquina.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/viakon_trinchera1.jpg" alt="Excavación de trinchera">
+                        <div class="project-overlay">
+                            <h4>Excavación inicial</h4>
+                            <p>Inicio de excavación para trinchera de cableado.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_trinchera2.jpg" alt="Compactación de trinchera">
+                        <div class="project-overlay">
+                            <h4>Compactación</h4>
+                            <p>Compactación del fondo de la trinchera.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_trinchera3.jpg" alt="Colado de concreto en trinchera">
+                        <div class="project-overlay">
+                            <h4>Colado de concreto</h4>
+                            <p>Colado de concreto en secciones de la trinchera.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_trinchera4.jpg" alt="Colocación de acero en trinchera">
+                        <div class="project-overlay">
+                            <h4>Colocación de acero</h4>
+                            <p>Armado de acero para refuerzo de la cimentación.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_trinchera5.jpg" alt="Avance de armado de acero">
+                        <div class="project-overlay">
+                            <h4>Avance de armado</h4>
+                            <p>Avance en el armado de acero y preparación para colado.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_trinchera6.jpg" alt="Vista general de la obra">
+                        <div class="project-overlay">
+                            <h4>Vista general</h4>
+                            <p>Vista general del área de trabajo y avance de obra.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Colocación de estructura para techo de mezanine - Planta Viakon -->
+                <div class="project-main">
+                    <h3>Colocación de estructura para techo de mezanine - Planta Viakon</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Octubre 2022</p>
+                        <p><strong>Cliente:</strong> Planta Viakon</p>
+                        <p><strong>Ubicación:</strong> San Nicolás de los Garza</p>
+                        <p><strong>Trabajo:</strong> Colocación de estructura para techo de mezanine.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/viakon_mezanine1.jpg" alt="Izaje de estructura de techo">
+                        <div class="project-overlay">
+                            <h4>Izaje de estructura</h4>
+                            <p>Izaje y posicionamiento de estructura metálica para techo.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_mezanine2.jpg" alt="Colocación de estructura metálica">
+                        <div class="project-overlay">
+                            <h4>Colocación de estructura</h4>
+                            <p>Colocación precisa de la estructura sobre el mezanine.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_mezanine3.jpg" alt="Supervisión de izaje">
+                        <div class="project-overlay">
+                            <h4>Supervisión</h4>
+                            <p>Supervisión y coordinación durante el izaje.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_mezanine4.jpg" alt="Alineación de estructura">
+                        <div class="project-overlay">
+                            <h4>Alineación</h4>
+                            <p>Alineación y aseguramiento de la estructura en sitio.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/viakon_mezanine5.jpg" alt="Vista general de la obra">
+                        <div class="project-overlay">
+                            <h4>Vista general</h4>
+                            <p>Vista general del área de trabajo y estructura instalada.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Urbanización y pavimentación - Sol Residencial -->
+                <div class="project-main">
+                    <h3>Urbanización y pavimentación - Sol Residencial</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Abril 2023</p>
+                        <p><strong>Cliente:</strong> Fraccionamiento Sol Residencial</p>
+                        <p><strong>Ubicación:</strong> Juárez, NL</p>
+                        <p><strong>Trabajo:</strong> Urbanización y pavimentación.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/sol1.jpg" alt="Inicio de urbanización">
+                        <div class="project-overlay">
+                            <h4>Inicio de urbanización</h4>
+                            <p>Preparación y nivelación del terreno para urbanización.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/sol2.jpg" alt="Apertura de vialidad">
+                        <div class="project-overlay">
+                            <h4>Apertura de vialidad</h4>
+                            <p>Formación de vialidades principales y secundarias.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/sol3.jpg" alt="Pavimentación inicial">
+                        <div class="project-overlay">
+                            <h4>Pavimentación inicial</h4>
+                            <p>Colocación de base y carpeta asfáltica.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/sol4.jpg" alt="Nivelación y compactación">
+                        <div class="project-overlay">
+                            <h4>Nivelación y compactación</h4>
+                            <p>Trabajos de nivelación y compactación de vialidades.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/sol5.jpg" alt="Urbanización terminada">
+                        <div class="project-overlay">
+                            <h4>Urbanización terminada</h4>
+                            <p>Vista final de vialidades urbanizadas y pavimentadas.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Reparación de cancha con carpeta - Planicies -->
+                <div class="project-main">
+                    <h3>Reparación de cancha con carpeta - Planicies</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Octubre 2023</p>
+                        <p><strong>Cliente:</strong> Fraccionamiento Planicies</p>
+                        <p><strong>Ubicación:</strong> Apodaca, NL</p>
+                        <p><strong>Trabajo:</strong> Reparación de cancha con carpeta asfáltica.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/planicies1.jpg" alt="Vista general de la cancha antes de reparación">
+                        <div class="project-overlay">
+                            <h4>Antes de la reparación</h4>
+                            <p>Vista general de la cancha antes de la intervención.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/planicies2.jpg" alt="Inicio de reparación de carpeta">
+                        <div class="project-overlay">
+                            <h4>Inicio de reparación</h4>
+                            <p>Inicio de trabajos de reparación de la carpeta asfáltica.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/planicies3.jpg" alt="Aplicación de carpeta asfáltica">
+                        <div class="project-overlay">
+                            <h4>Aplicación de carpeta</h4>
+                            <p>Aplicación de nueva carpeta asfáltica en la cancha.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/planicies4.jpg" alt="Compactación de carpeta">
+                        <div class="project-overlay">
+                            <h4>Compactación</h4>
+                            <p>Compactación y nivelación de la superficie.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/planicies5.jpg" alt="Cancha terminada y pintada">
+                        <div class="project-overlay">
+                            <h4>Cancha terminada</h4>
+                            <p>Cancha terminada y pintada, lista para su uso.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Canalización para semaforización - Monterrey -->
+                <div class="project-main">
+                    <h3>Canalización para semaforización - Monterrey</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Diciembre 2023</p>
+                        <p><strong>Cliente:</strong> Municipio de Monterrey</p>
+                        <p><strong>Ubicación:</strong> Monterrey, NL</p>
+                        <p><strong>Trabajo:</strong> Canalización para semaforización.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/semaforo1.jpg" alt="Canalización y registro">
+                        <div class="project-overlay">
+                            <h4>Canalización y registro</h4>
+                            <p>Colocación de ductos y registros para semaforización.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/semaforo2.jpg" alt="Banqueta rehabilitada">
+                        <div class="project-overlay">
+                            <h4>Banqueta rehabilitada</h4>
+                            <p>Rehabilitación de banquetas tras canalización.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/semaforo3.jpg" alt="Canalización en camellón">
+                        <div class="project-overlay">
+                            <h4>Canalización en camellón</h4>
+                            <p>Colocación de ductos en camellón central.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/semaforo4.jpg" alt="Registros para semáforo">
+                        <div class="project-overlay">
+                            <h4>Registros para semáforo</h4>
+                            <p>Preparación de registros para instalación de semáforos.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/semaforo5.jpg" alt="Excavación para ductos">
+                        <div class="project-overlay">
+                            <h4>Excavación para ductos</h4>
+                            <p>Excavación y tendido de ductos en banqueta.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/semaforo6.jpg" alt="Apertura de zanja">
+                        <div class="project-overlay">
+                            <h4>Apertura de zanja</h4>
+                            <p>Apertura de zanja para canalización eléctrica.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/semaforo7.jpg" alt="Tendido de ductos">
+                        <div class="project-overlay">
+                            <h4>Tendido de ductos</h4>
+                            <p>Tendido y alineación de ductos para semaforización.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Canalización para semaforización - Reynosa -->
+                <div class="project-main">
+                    <h3>Canalización para semaforización - Reynosa</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Enero 2024</p>
+                        <p><strong>Cliente:</strong> Municipio de Reynosa</p>
+                        <p><strong>Ubicación:</strong> Reynosa, Tamaulipas</p>
+                        <p><strong>Trabajo:</strong> Canalización para semaforización.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/reynosa1.jpg" alt="Preparación de registro Reynosa">
+                        <div class="project-overlay">
+                            <h4>Preparación de registro</h4>
+                            <p>Preparación y armado de registro para canalización.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/reynosa2.jpg" alt="Colocación de registro Reynosa">
+                        <div class="project-overlay">
+                            <h4>Colocación de registro</h4>
+                            <p>Colocación de registro y ducto para semaforización.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/reynosa3.jpg" alt="Apertura de zanja Reynosa">
+                        <div class="project-overlay">
+                            <h4>Apertura de zanja</h4>
+                            <p>Apertura de zanja para tendido de ductos.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/reynosa4.jpg" alt="Registro terminado Reynosa">
+                        <div class="project-overlay">
+                            <h4>Registro terminado</h4>
+                            <p>Registro terminado y listo para conexión.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/reynosa5.jpg" alt="Tendido de ductos Reynosa">
+                        <div class="project-overlay">
+                            <h4>Tendido de ductos</h4>
+                            <p>Tendido de ductos para semaforización en vialidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Cambio de foco en luminaria - Mission TX -->
+                <div class="project-main">
+                    <h3>Cambio de foco en luminaria - Mission TX</h3>
+                    <div class="project-info">
+                        <p><strong>Cliente:</strong> Planta de tratamiento de agua</p>
+                        <p><strong>Ubicación:</strong> Mission, TX</p>
+                        <p><strong>Trabajo:</strong> Cambio de foco en luminaria.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/mission1.jpg" alt="Cambio de foco en luminaria Mission TX">
+                        <div class="project-overlay">
+                            <h4>Cambio de foco</h4>
+                            <p>Proceso de cambio de foco en luminaria de gran altura.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/mission2.jpg" alt="Luminaria instalada Mission TX">
+                        <div class="project-overlay">
+                            <h4>Luminaria instalada</h4>
+                            <p>Verificación y prueba de la nueva luminaria instalada.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/mission3.jpg" alt="Vista general de la planta Mission TX">
+                        <div class="project-overlay">
+                            <h4>Vista general</h4>
+                            <p>Vista general de la planta tras el cambio de luminarias.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Proyecto: Firme de compresión y porche de madera - Campos de Sueño -->
+                <div class="project-main">
+                    <h3>Firme de compresión y porche de madera - Campos de Sueño</h3>
+                    <div class="project-info">
+                        <p><strong>Cliente:</strong> Residencial Campos de Sueño</p>
+                        <p><strong>Ubicación:</strong> McAllen, TX</p>
+                        <p><strong>Trabajo:</strong> Firme de compresión y construcción de porche de madera.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/campos1.jpg" alt="Preparación de firme de compresión">
+                        <div class="project-overlay">
+                            <h4>Preparación de firme</h4>
+                            <p>Preparación del área y encofrado para firme de compresión.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/campos2.jpg" alt="Colado de firme de compresión">
+                        <div class="project-overlay">
+                            <h4>Colado de firme</h4>
+                            <p>Colado y afinado del firme de compresión.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/campos3.jpg" alt="Vista de techumbre">
+                        <div class="project-overlay">
+                            <h4>Vista de techumbre</h4>
+                            <p>Vista superior de la techumbre y avance de obra.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/campos4.jpg" alt="Estructura de porche de madera">
+                        <div class="project-overlay">
+                            <h4>Estructura de porche</h4>
+                            <p>Montaje de estructura de madera para el porche.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/campos5.jpg" alt="Porche de madera terminado">
+                        <div class="project-overlay">
+                            <h4>Porche terminado</h4>
+                            <p>Porche de madera terminado y listo para uso.</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Proyecto: Acceso a hangares privados - Aeropuerto Internacional de Monterrey -->
+                <div class="project-main">
+                    <h3>Acceso a hangares privados - Aeropuerto Internacional de Monterrey</h3>
+                    <div class="project-info">
+                        <p><strong>Fecha:</strong> Mayo 2024</p>
+                        <p><strong>Cliente:</strong> Aeropuerto Internacional de Monterrey</p>
+                        <p><strong>Ubicación:</strong> Apodaca, N.L.</p>
+                        <p><strong>Trabajo:</strong> Terracerías y carpeta asfáltica para acceso a hangares privados.</p>
+                    </div>
+                </div>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/projects/aeropuerto1.jpg" alt="Demolición de carpeta asfáltica">
+                        <div class="project-overlay">
+                            <h4>Demolición de carpeta</h4>
+                            <p>Demolición y retiro de carpeta asfáltica existente.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/aeropuerto2.jpg" alt="Transporte de material">
+                        <div class="project-overlay">
+                            <h4>Transporte de material</h4>
+                            <p>Transporte y disposición de material demolido.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/aeropuerto3.jpg" alt="Preparación de terracería">
+                        <div class="project-overlay">
+                            <h4>Preparación de terracería</h4>
+                            <p>Preparación y compactación de terracería para nueva carpeta.</p>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/projects/aeropuerto4.jpg" alt="Colocación de carpeta asfáltica">
+                        <div class="project-overlay">
+                            <h4>Colocación de carpeta</h4>
+                            <p>Colocación de nueva carpeta asfáltica en acceso a hangares.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Section -->
+    <section id="clientes" class="clients">
+        <div class="container">
+            <h2>Nuestros Clientes</h2>
+            <div class="clients-grid">
+                <div class="client-logo">
+                    <img src="images/logos/CEMEX1.png" alt="CEMEX Logo">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/Esperanza_Homes.jpg" alt="Esperanza Homes Logo">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/viakon.png" alt="Viakon Logo">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/condocasa.png" alt="Condocasa Logo">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/Semex.jpg" alt="SEMEX Logo">
+                </div>
+                <div class="client-logo">
+                    <img src="images/logos/CityOfMission.png" alt="City of Mission Logo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="contact">
+        <div class="container">
+            <h2>Contáctanos</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Valle de los Mezquites 439, Valle de las Palmas 1, Apodaca, N.L. CP. 66635</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+52 899 314 5588</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <p>+52 81 1555 5057</p>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>rajem.coinma@gmail.com</p>
+                    </div>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <input type="text" name="nombre" placeholder="Nombre" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="telefono" placeholder="Teléfono">
+                    <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+                    <button type="submit" class="submit-button">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>RAJEM</h3>
+                    <p>Construcción, Instalación y Mantenimiento desde 1990</p>
+                </div>
+                <div class="social-links">
+                    <!-- Redes sociales temporalmente ocultas
+                    <a href="https://www.facebook.com/omaralejandro.ramirez"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/omar.alejandro.garza/"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/oarg/"><i class="fab fa-linkedin"></i></a>
+                    -->
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 RAJEM. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animaciones responsivas y carga de imágenes optimizada
+        document.addEventListener('DOMContentLoaded', () => {
+            // Menú hamburguesa
+            const hamburger = document.getElementById('hamburger-menu');
+            const nav = document.getElementById('main-nav');
+            hamburger.addEventListener('click', () => {
+                nav.classList.toggle('open');
+                hamburger.classList.toggle('open');
+            });
+            // Animaciones con IntersectionObserver
+            const observer = new window.IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+
+            document.querySelectorAll('.hero-content, .about-content, .service-card, .project-card, .contact-content, .value-item').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Efecto flotante en íconos de servicios
+            document.querySelectorAll('.service-card i').forEach(icon => {
+                icon.classList.add('float');
+            });
+
+            // Efecto pulse en CTA
+            const ctaButton = document.querySelector('.cta-button');
+            if (ctaButton) ctaButton.classList.add('pulse');
+
+            // Animación inicial del hero
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) heroContent.classList.add('visible', 'slide-up');
+
+            // Carga progresiva de imágenes (blur)
+            document.querySelectorAll('.project-card img, .client-logo img').forEach(img => {
+                if (img.complete) {
+                    img.classList.add('loaded');
+                } else {
+                    img.addEventListener('load', () => img.classList.add('loaded'));
+                }
+            });
+        });
+
+        // Smooth scroll para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Manejo del formulario de contacto
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const nombre = formData.get('nombre');
+            const email = formData.get('email');
+            const telefono = formData.get('telefono');
+            const mensaje = formData.get('mensaje');
+            
+            // Construir el cuerpo del correo
+            const mailtoLink = `mailto:rajem.coinma@gmail.com?subject=Nuevo contacto desde sitio web RAJEM&body=Nombre: ${nombre}%0D%0A%0D%0AEmail: ${email}%0D%0A%0D%0ATeléfono: ${telefono}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+            
+            // Abrir el cliente de correo predeterminado
+            window.location.href = mailtoLink;
+            
+            // Limpiar el formulario
+            this.reset();
+            
+            // Mostrar mensaje de confirmación
+            alert('¡Gracias por tu mensaje! Se abrirá tu cliente de correo para enviar los datos.');
+        });
+    </script>
+</body>
+</html> 
