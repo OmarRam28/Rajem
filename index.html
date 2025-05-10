@@ -1766,7 +1766,7 @@
             const mensaje = formData.get('mensaje');
             
             // Construir el cuerpo del correo
-            const mailtoLink = `mailto:rajem.coinma@gmail.com?subject=Nuevo contacto desde sitio web RAJEM&body=Nombre: ${nombre}%0D%0A%0D%0AEmail: ${email}%0D%0A%0D%0ATeléfono: ${telefono}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
+            const mailtoLink = `mailto:contacto@gruporajem.com?subject=Nuevo contacto desde sitio web RAJEM&body=Nombre: ${nombre}%0D%0A%0D%0AEmail: ${email}%0D%0A%0D%0ATeléfono: ${telefono}%0D%0A%0D%0AMensaje:%0D%0A${mensaje}`;
             
             // Abrir el cliente de correo predeterminado
             window.location.href = mailtoLink;
